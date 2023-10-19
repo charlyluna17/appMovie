@@ -1,7 +1,7 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:proyecto_cine/domain/entities/movie.dart';
-import 'package:proyecto_cine/presentation/providers/movies/movie_repository_provider.dart';
+import 'package:proyecto_cine/presentation/providers/movies/movies_repository_provider.dart';
 
 
 final nowPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
@@ -61,3 +61,4 @@ class MoviesNotifier extends StateNotifier<List<Movie>> {
 
 
 }
+

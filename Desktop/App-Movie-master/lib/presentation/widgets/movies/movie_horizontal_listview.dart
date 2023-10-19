@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
+
+import 'package:go_router/go_router.dart';
 import 'package:proyecto_cine/config/helpers/human_formats.dart';
 import 'package:proyecto_cine/domain/entities/movie.dart';
-
 
 
 class MovieHorizontalListview extends StatefulWidget {
@@ -106,7 +107,7 @@ class _Slide extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
-                movie.poesterPath,
+                movie.posterPath,
                 fit: BoxFit.cover,
                 width: 150,
                 loadingBuilder: (context, child, loadingProgress) {
@@ -116,7 +117,11 @@ class _Slide extends StatelessWidget {
                       child: Center(child: CircularProgressIndicator(strokeWidth: 2 )),
                     );
                   }
-                  return FadeIn(child: child);
+                  return GestureDetector(
+                    onTap: () => context.push('/movie/${ movie.id }'),
+                    child: FadeIn(child: child),
+                  );
+                  
                 },
               ),
             ),
@@ -143,7 +148,7 @@ class _Slide extends StatelessWidget {
                 const SizedBox( width: 3 ),
                 Text('${ movie.voteAverage }', style: textStyles.bodyMedium?.copyWith( color: Colors.yellow.shade800 )),
                 const Spacer(),
-                Text( HumanFormats.number(movie.popularity), style: textStyles.bodySmall ),
+                Text( HumanFormats.number(movie.popularity), style: textStyles.bodySmall )
           
               ],
             ),

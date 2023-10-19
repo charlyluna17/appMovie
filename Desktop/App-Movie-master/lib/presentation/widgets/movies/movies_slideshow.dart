@@ -4,6 +4,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:proyecto_cine/domain/entities/movie.dart';
 
 
+
 class MoviesSlideshow extends StatelessWidget {
   
   final List<Movie> movies;

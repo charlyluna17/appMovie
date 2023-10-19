@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomBottonNavigation extends StatelessWidget {
-  const CustomBottonNavigation({super.key});
+
+class CustomBottomNavigation extends StatelessWidget {
+  const CustomBottomNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,18 +10,18 @@ class CustomBottonNavigation extends StatelessWidget {
       elevation: 0,
       items: const [
         BottomNavigationBarItem(
-        icon: Icon(Icons.home_max),
-        label: 'Inicio'
+          icon: Icon( Icons.home_max ),
+          label: 'Inicio'
         ),
         BottomNavigationBarItem(
-        icon: Icon(Icons.label_outline),
-        label: 'Categorias'
+          icon: Icon( Icons.label_outline ),
+          label: 'Categorías'
         ),
         BottomNavigationBarItem(
-        icon: Icon(Icons.favorite_outline),
-        label: 'Favoritos'
-        )
-      ],
+          icon: Icon( Icons.favorite_outline ),
+          label: 'Favoritos'
+        ),
+      ]
     );
   }
 }
